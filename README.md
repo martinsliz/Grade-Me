@@ -1,10 +1,59 @@
 # Grade-Me
 
+## **3/16/2023**
+
 ### By
 
-- Liz Martins [Github](https://github.com/martinsliz) || [Linkedin](https://www.linkedin.com/in/elizmartins/)
+#### [Liz Martins]() | [Tina Yang]() | [Sarah Maher]()
 
-###[Sarah Maher](https://www.linkedin.com/in/sarah-maher-8a6865255)
+#### [Front End Repository]() | [Back End Repository ]()
 
-Tina Yang
+---
 
+## **_Description_**
+
+#### Week ten project at General Assembly.
+
+#### Grade-Me is a full-stack application
+
+####
+
+---
+
+### **_*Technologies Used*_**
+
+- Postgres
+- Express
+- React
+- Node
+- Vue
+
+---
+
+### **_Getting Started_**
+
+#### ![ERD]()
+
+#### ![ERD]()
+
+### **Objective**
+
+###
+
+### **Flow**
+
+###
+
+---
+
+##
+
+---
+
+### **_Screenshots_**
+
+---
+
+---
+
+## **Credits**
