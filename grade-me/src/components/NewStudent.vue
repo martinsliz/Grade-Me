@@ -1,8 +1,6 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link>
-    <router-link to="/classlist/:id/studentlist">Students</router-link>
-    <router-link to="/classlist">Classes</router-link>
     <router-link to="/about">About</router-link>
   </nav>
 </template>
