@@ -1,9 +1,10 @@
 <template>
     <div class="classListContainer">
         <h1 class="classTitle">Classes</h1>
-        <router-link class="button" to="/addclass">Add Class</router-link>
+        <button @click="shareData">Add Class</button>
+        <!-- <router-link class="button" to="/addclass" :firstclass="firstclass">Add Class</router-link> -->
         <!-- <div class="classListResults" :key="class.id" v-for="class in classes">
-            <router-link to=`/class/${class.id}`>{{ class.name }}</router-link>
+            <router-link to=`/class/{{class.id}}`>{{ class.name }}</router-link>
         </div> -->
     </div>
 </template>
@@ -15,6 +16,7 @@ export default {
     components: {},
     data: () => ({
         classes: [],
+        firstclass: 'science',
     }),
     mounted() {
         // this.getClasses()
@@ -25,6 +27,9 @@ export default {
         //     this.classes = res.data
         //     console.log(res)
         // }
+        shareData() {
+            this.$router.push({ name: 'AddClass', params: { data: this.firstclass } })
+        }
     }
 }
 </script>

@@ -11,10 +11,10 @@ const routes = [
     { path: '/', component: HomePage, name: 'HomePage' },
     { path: '/about', component: AboutPage, name: 'AboutPage' },
     { path: '/classlist', component: ClassList, name: 'ClassList' },
-    { path: '/classlist/:id', component: ClassPage, name: 'ClassPage' },
+    { path: '/class/:id', component: ClassPage, name: 'ClassPage' },
     { path: '/classlist/:id/studentlist', component: StudentList, name: 'StudentList' },
     { path: '/student/:id', component: StudentPage, name: 'StudentPage' },
-    { path: '/addclass', component: AddClass, name: 'AddClass' }
+    { path: '/addclass/:data', component: AddClass, name: 'AddClass', props: true }
 ]
 
 const router = createRouter({
