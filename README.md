@@ -1,6 +1,57 @@
 # Grade-Me
 
-###[Sarah Maher](https://www.linkedin.com/in/sarah-maher-8a6865255)
+## **3/16/2023**
 
-Tina Yang
+#### [Liz Martins]() | [Tina Yang]() | [Sarah Maher]()
 
+#### [Front End Repository]() | [Back End Repository ]()
+
+---
+
+## **_Description_**
+
+#### Week ten project at General Assembly.
+
+#### Grade-Me is a full-stack application
+
+####
+
+---
+
+### **_*Technologies Used*_**
+
+- Postgres
+- Express
+- React
+- Node
+- Vue
+
+---
+
+### **_Getting Started_**
+
+#### ![ERD]()
+
+#### ![ERD]()
+
+### **Objective**
+
+###
+
+### **Flow**
+
+###
+
+---
+
+##
+
+---
+
+### **_Screenshots_**
+
+---
+
+---
+
+## **Credits**
