@@ -1,14 +1,14 @@
 <template>
-  <HomePage />
+  <main>
+    <router-view header="Grade-Me"></router-view>
+  </main>
 </template>
 
 <script>
-import HomePage from './pages/HomePage.vue'
 
 export default {
   name: 'App',
   components: {
-    HomePage,
   }
 }
 </script>
