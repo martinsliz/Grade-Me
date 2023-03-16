@@ -1,7 +1,7 @@
 <template>
     <div class="classListContainer">
         <h1 class="classTitle">Classes</h1>
-        <router-link class="addClassButton" to="/addclass">Add Class</router-link>
+        <router-link class="button" to="/addclass">Add Class</router-link>
         <!-- <div class="classListResults" :key="class.id" v-for="class in classes"> -->
         <!-- <h1 class="classTitle">{{class.name}}</h1> -->
         <!-- </div> -->
@@ -28,3 +28,20 @@ export default {
     }
 }
 </script>
+
+<style>
+.button {
+    display: inline-block;
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 0.25em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #3e8e41;
+}
+</style>

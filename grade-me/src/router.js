@@ -5,6 +5,7 @@ import ClassList from './pages/ClassList'
 import StudentList from './pages/StudentList'
 import ClassPage from './pages/ClassPage'
 import StudentPage from './pages/StudentPage'
+import AddClass from './pages/AddClass'
 
 const routes = [
     { path: '/', component: HomePage, name: 'HomePage' },
@@ -13,6 +14,7 @@ const routes = [
     { path: '/classlist/:id', component: ClassPage, name: 'ClassPage' },
     { path: '/classlist/:id/studentlist', component: StudentList, name: 'StudentList' },
     { path: '/student/:id', component: StudentPage, name: 'StudentPage' },
+    { path: '/addclass', component: AddClass, name: 'AddClass' }
 ]
 
 const router = createRouter({
