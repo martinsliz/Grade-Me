@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     async getAllStudents() {
-      const response = await axios.get('/api/classlist/:id/studentlist')
+      const response = await axios.get('/api/student/get-students')
       this.allStudents = response.data.results
     },
     // getStudentDetails() {

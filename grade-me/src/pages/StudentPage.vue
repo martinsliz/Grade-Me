@@ -1,5 +1,6 @@
 <template>
-  <div>Students</div>
+  <div>
+  <h3>Students</h3>
   <section class="details">
       <div class="flex-row space">
         <h3>
@@ -10,18 +11,16 @@
         </h3>
       </div>
       <div>
-        <p>
-          {{ gameDetails.description_raw }}
-        </p>
-        <div>
-          <router-link to="/" name="StudentForm">
-            <button>ADD STUDENT</button>
-          </router-link>
-        </div>
+        <router-link to="/" name="StudentForm">
+          <button>ADD STUDENT</button>
+        </router-link>
+      </div>
+    </section>
+      
+
       </div>
       <div>
         </div>
-    </section>
 </template>
 
 
