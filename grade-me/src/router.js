@@ -17,17 +17,17 @@ const routes = [
     { path: '/student/:id', component: StudentPage, name: 'StudentPage' },
     { path: '/addclass', component: AddClass, name: 'AddClass', },
     {
-    path: '/addstudent/:data',
-    component: NewStudent,
-    name: 'NewStudent',
-    props: true
-  }
+        path: '/addstudent/:data',
+        component: NewStudent,
+        name: 'NewStudent',
+        props: true
+    }
 
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes
+    history: createWebHistory(),
+    routes
 })
 
 export default router
