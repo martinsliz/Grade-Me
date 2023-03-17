@@ -52,3 +52,32 @@ export default {
     }
 }
 </script>
+
+
+
+<style scoped>
+.class-page {
+  padding: 20px;
+}
+
+.class-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.student-item {
+  margin-bottom: 10px;
+}
+
+.student-link {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-size: 20px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.student-link:hover {
+  color: #0f89a1;
+}
+</style>
