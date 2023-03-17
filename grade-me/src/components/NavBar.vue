@@ -8,12 +8,12 @@
 </template>
 
 <script>
-  export default {
-    name: 'NavBar'
-  }
+export default {
+  name: 'NavBar'
+}
 </script>
 
-<style scoped>
+<!-- <style scoped>
 nav {
   background-color: #f7f7f7;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -39,4 +39,4 @@ nav {
 .nav-item:hover {
   background-color: #ddd;
 }
-</style>
+</style> -->

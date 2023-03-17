@@ -1,6 +1,5 @@
 <template>
     <section>
-        <NavBar />
     </section>
     <div>
         <h1 class="homeTitle">GradeMe</h1>
@@ -28,11 +27,9 @@
 <script>
 import axios from 'axios'
 import ClassList from './ClassList.vue'
-import NavBar from '@/components/NavBar.vue';
 export default {
     name: 'HomePage',
     components: {
-        NavBar,
         ClassList
     },
     data: () => ({
