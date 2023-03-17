@@ -48,7 +48,7 @@ methods: {
     const studentId = this.$route.params.id
     const response = await axios.get(`/api/student/${studentId}`)
     console.log(response)
-    this.studentById = response.data.results
+    // this.studentById = response.data.results
     //this.gpa
   }
   
