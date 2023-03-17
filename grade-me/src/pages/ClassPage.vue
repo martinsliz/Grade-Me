@@ -3,7 +3,7 @@
         <h2>Class Page</h2>
         <h1 class="classTitle">{{ selectedClass.name }}</h1>
         <div :key="student.id" v-for="student in studentList">
-            <router-link :to='"/student/" + student.id'>{{ student.name }}</router-link>
+            <router-link :to='"/student/" + student.id' class="student-link">{{ student.name }}</router-link>
             <router-link :to='"/class/" + this.$route.params.classId + "/student/" + student.id'>View Grade</router-link>
 
         </div>
@@ -57,27 +57,27 @@ export default {
 
 <style scoped>
 .class-page {
-  padding: 20px;
+    padding: 20px;
 }
 
 .class-title {
-  font-size: 32px;
-  margin-bottom: 20px;
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
 .student-item {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .student-link {
-  text-decoration: none;
-  color: #1c1c1c;
-  font-size: 20px;
-  font-weight: 500;
-  transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    color: #1c1c1c;
+    font-size: 20px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
 }
 
 .student-link:hover {
-  color: #0f89a1;
+    color: #0f89a1;
 }
 </style>
