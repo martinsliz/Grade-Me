@@ -5,12 +5,11 @@
         <input :value=searchQuery @input="handleChange"/>
         <button>Search</button>
       </form>
-      <h2>Search Results</h2>
+      <h2>Students</h2>
     </div>
-
+    
     <section class="search-results container-grid" >
-        <div class="search-results container-grid"  >
-            <!-- <StudentList :results="results" v-for="result in searchResults" :key="result.id" @click="selectStudent(result.id)"/> -->
+        <div class="search-results container-grid" v-for="results in searchResults" :key="results.id" @click="selectStudent()" >
               <h3>{{ results.name }}</h3>
               <h4>{{ results.gpa}}</h4>
               <h4>{{ results.email}}</h4>
@@ -47,9 +46,9 @@ import axios from 'axios'
       handleChange(event) {
         this.searchQuery = event.target.value
       },
-      // selectStudent(id) {
-      //   this.$router.push('/student/:id')
-      // }
+      selectStudent() {
+        this.$router.push('/student/:id')
+      }
     }}
   
 </script>
