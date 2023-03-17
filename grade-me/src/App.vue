@@ -1,4 +1,7 @@
 <template>
+  <header>
+    <NavBar />
+  </header>
   <main>
     <router-view header="Grade-Me"></router-view>
   </main>
@@ -6,9 +9,11 @@
 
 <script>
 
+import NavBar from './components/NavBar.vue'
 export default {
   name: 'App',
   components: {
+    NavBar
   }
 }
 </script>
