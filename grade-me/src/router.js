@@ -14,7 +14,7 @@ const routes = [
   { path: '/classlist', component: ClassList, name: 'ClassList' },
   { path: '/class/:classId', component: ClassPage, name: 'ClassPage' },
   { path: '/studentlist', component: StudentList, name: 'StudentList' },
-  { path: '/student/:id', component: StudentPage, name: 'StudentPage' },
+  { path: '/student/:studentId', component: StudentPage, name: 'StudentPage' },
   { path: '/addclass', component: AddClass, name: 'AddClass' },
   {
     path: '/addstudent/:data',
@@ -22,12 +22,11 @@ const routes = [
     name: 'NewStudent',
     props: true
   }
-
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes
+  history: createWebHistory(),
+  routes
 })
 
 export default router

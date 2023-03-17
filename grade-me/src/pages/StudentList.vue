@@ -7,12 +7,15 @@
       </form>
       <h2>Students</h2>
     </div>
-    
-    <section class="search-results container-grid" >
-        <div class="search-results container-grid" v-for="results in searchResults" :key="results.id" @click="selectStudent()" >
-              <h3>{{ results.name }}</h3>
-              <h4>{{ results.gpa}}</h4>
-              <h4>{{ results.email}}</h4>
+    <section class="search-results container-grid" v-if="!searched">
+        <div class="search-results container-grid" v-for="oneStudent in allStudents" :key="oneStudent.id">
+         <h3><router-link :to='"/student/" + oneStudent.id'>{{ oneStudent.name }}</router-link></h3>
+        </div>
+    </section>
+
+    <section class="search-results container-grid">
+        <div class="search-results container-grid" v-for="results in searchResults" :key="results.id">
+         <h3><router-link :to='"/student/" + results.id'>{{ results.name }}</router-link></h3>
         </div>
     </section>
 </template>
@@ -27,16 +30,22 @@ import axios from 'axios'
     data: () => ({
         searchQuery: '',
         searchResults: [],
-        searched: false
+        searched: false,
+        allStudents: []
     }),
     mounted() {
-      this.getSearchResults()
+      this.getAllStudents()
     },
-    methods: {async getSearchResults(e) {
+    methods: {
+      async getAllStudents() {
+        const response = await axios.get(`http://localhost:3001/api/student/get-students`)
+        // console.log(response.data)
+        this.allStudents = response.data
+      },
+      async getSearchResults(e) {
         e.preventDefault()
         const response = await axios.get(`http://localhost:3001/api/student/get-students`)
-        console.log(response.data)
-        // this.searchResults = response.data
+        // console.log(response.data)
         this.searchResults = response.data.filter((student) => {
     return student.name.toLowerCase().includes(this.searchQuery.toLowerCase())
   })
@@ -52,41 +61,3 @@ import axios from 'axios'
     }}
   
 </script>
-
-
-<!-- <template>
-    <div>Student List</div>
-</template>
-
-
-<script>
-import axios from 'axios'
-
-export default {
-  name: 'StudentList',
-  components: {
-
-  },
-  data: () => ({
-    name: "",
-    email: "",
-    gpa: null,
-  }),
-  mounted() {
-
-  },
-  methods: {
-    async getAllStudents() {
-      const response = await axios.get('/api/student/get-students')
-      console.log(response)
-      this.allStudents = response.data.results
-    },
-    // getStudentDetails() {
-    //   this.$router.push(``)
-    // }
-
-  }
-}
-
-
-</script> -->
