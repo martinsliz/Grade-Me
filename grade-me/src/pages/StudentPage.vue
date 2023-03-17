@@ -55,3 +55,42 @@ methods: {
 }
 }
 </script>
+
+<style scoped>
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.space {
+  justify-content: space-between;
+}
+
+.student-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 2rem;
+}
+.student-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+</style>
