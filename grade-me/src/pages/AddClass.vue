@@ -41,15 +41,15 @@ export default {
 
 <style scoped>
 .addClassForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
 }
 
 .addClassTitle {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 </style>
