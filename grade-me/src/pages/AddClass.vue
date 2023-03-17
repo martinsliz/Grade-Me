@@ -16,19 +16,25 @@ export default {
     data: () => ({
         newClassName: '',
     }),
-    // mounted() {
-    // },
+    mounted() {
+        // this.getClasss()
+    },
     methods: {
         async handleSubmit(e) {
             e.preventDefault()
-            const res = await axios.post(`http://localhost:3001/`, { name: this.newClassName })
+            const res = await axios.post(`http://localhost:3001/api/class/`, { name: this.newClassName })
             console.log(res)
             this.$router.push(`/`)
-            this.getClasses()
+            this.getClasss()
             //would I also have to put a getClassList() call again here?
         },
         handleChange(e) {
             this.newClassName = e.target.value
+        },
+        async getClasss() {
+            const res = await axios.get(`http://localhost:3001/api/class/get-classes`)
+            this.classes = res.data
+            console.log(res)
         }
     }
 }
