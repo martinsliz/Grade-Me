@@ -22,11 +22,12 @@ const routes = [
     name: 'NewStudent',
     props: true
   }
+
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes
+    history: createWebHistory(),
+    routes
 })
 
 export default router
