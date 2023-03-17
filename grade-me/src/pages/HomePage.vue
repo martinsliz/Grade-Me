@@ -1,4 +1,7 @@
 <template>
+    <section>
+        <NavBar />
+    </section>
     <div>
         <h1 class="homeTitle">GradeMe</h1>
         <form @submit="getClassSearchResult">
@@ -25,12 +28,12 @@
 <script>
 import axios from 'axios'
 import ClassList from './ClassList.vue'
-// import StudentList from './StudentList.vue'
+import NavBar from '@/components/NavBar.vue';
 export default {
     name: 'HomePage',
     components: {
-        ClassList,
-        // StudentList
+        NavBar,
+        ClassList
     },
     data: () => ({
         searchValue: '',
