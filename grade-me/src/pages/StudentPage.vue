@@ -1,12 +1,12 @@
 <template>
   <div>
-  <h3>Student</h3>
+  <h2>Student</h2>
   <section class="details">
-      <div class="flex-row space">
+      <div class="flex-row space" v-if="student">
         <h3>
-          <h3>{{ studentDetails.name }}</h3>
-          <h4>{{ studentDetails.gpa}}</h4>
-          <h4>{{ studentDetails.email}}</h4>
+          <h3>{{ student.name }}</h3>
+          <h4>{{ student.gpa}}</h4>
+          <h4>{{ student.email}}</h4>
         </h3>
       </div>
       <div>
@@ -28,24 +28,21 @@ import axios from 'axios'
 
 export default {
 name: 'StudentPage',
-components: {
 
-},
 data: () => ({
-studentDetails: {}
+student: null
 }),
 mounted() {
 this.getStudentDetails()
 },
 methods: {
   async getStudentDetails() {
-    // const studentId = this.$route.params.id
-    const response = await axios.get('/api/student/get-students/:id')
-    console.log(response.data)
-    this.studentDetails = response.data
+    const response = await axios.get(`http://localhost:3001/api/student/get-students/${this.$route.params.id}`)
+    // console.log(response)
+    this.student = response.data
   }
-  
 }
+
 }
 </script>
 
