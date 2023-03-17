@@ -30,7 +30,7 @@ export default {
         async getStudentsByClass() {
             const res = await axios.get(`http://localhost:3001/api/class/get-classes/${this.$route.params.classId}/students`)
             this.studentList = res.data
-            console.log(res)
+            // console.log(res)
         },
     }
 }
