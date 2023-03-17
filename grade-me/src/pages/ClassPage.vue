@@ -36,13 +36,13 @@ export default {
             const res = await axios.get(`http://localhost:3001/api/class/get-classes/${this.$route.params.classId}/students`)
             this.studentList = res.data
             this.grade = this.studentlist.map((student) => student.id)
-            console.log(this.grade)
-            console.log(res)
+            // console.log(this.grade)
+            // console.log(res)
         },
         async getStudentsGradeByClass() {
             const res = await axios.get(`http://localhost:3001/api/classlists/${this.grade}/class/${this.$route.params.classId}`)
             this.studentList = res.data
-            console.log(res)
+            // console.log(res)
         },
         async getGradesForOneStudent() {
             const res = await axios.get(`http://localhost:3001/api/classlists/student/${this.$route.params.studentId}`)
