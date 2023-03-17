@@ -2,6 +2,7 @@
     <div>
         <h2>Class Page</h2>
         <h1 class="classTitle">{{ selectedClass.name }}</h1>
+        <!-- <router-link class='button' :to='"/class/" + selectedClass.id + "/addstudent"'>Add Student</router-link> -->
         <div :key="student.id" v-for="student in studentList">
             <router-link :to='"/student/" + student.id' class="student-link">{{ student.name }}</router-link>
             <router-link :to='"/class/" + this.$route.params.classId + "/student/" + student.id'>View Grade</router-link>
@@ -80,4 +81,19 @@ export default {
 .student-link:hover {
     color: #0f89a1;
 }
+
+/* .button {
+    display: inline-block;
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 0.25em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #3e8e41;
+} */
 </style>

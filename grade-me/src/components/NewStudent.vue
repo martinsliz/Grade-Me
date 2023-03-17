@@ -1,19 +1,13 @@
 <template>
   <div>
+    <h1> Add Student Form</h1>
     <form @submit="handleSubmit">
       <span>Full Name</span><br>
-      <input v-model="name" type="text" placeholder="Enter your name" /><br>
-      <span>Email</span><br>
-      <input v-model="email" type="email" placeholder="Enter your email" /><br>
-      <span>GPA</span><br>
-      <input v-model="gpa" type="gpa" placeholder="Enter your GPA" /><br>
-
-      <input class="submit" type="submit" value="Submit">
+      <input :value="newName" type="text" placeholder="Enter your name" @change="handleChange" /><br>
+      <!-- <span>Email</span><br>
+      <input :value="newEmail" type="email" placeholder="Enter your email" @change="handleChange" /><br> -->
+      <button type="submit">Submit</button>
     </form>
-    <div>
-      <button>Add</button>
-      <!-- on submit handleSubmit -->
-    </div>
   </div>
 </template>
 <script>
@@ -22,25 +16,26 @@ export default {
   name: 'NewStudent',
   props: ['getStudents'],
   data: () => ({
-    newStudent: {}
+    // newStudent: {},
+    newName: '',
+    // newEmail: ''
 
   }),
   methods: {
     async handleSubmit(e) {
       e.preventDefault()
-      const response = await axios.post('http://localhost:3001/api/student/create-student', newStudent)
+      const response = await axios.post('http://localhost:3001/api/student/create-student', { name: this.newName })
       console.log(response)
-      const newStudent = {
-        name: this.name,
-        email: this.email,
-        gpa: this.gpa
-      }
-      this.getStudents()
-
+      // const newStudent = {
+      //   name: this.newName,
+      //   email: this.newEmail,
+      // }
+      this.$router.push(`/studentlist`)
+      // this.getStudents()
     },
     handleChange(e) {
-      this[e.target.name] = e.target.value
-
+      this.newName = e.target.value
+      // this.newEmail = e.target.value
     }
   }
 
