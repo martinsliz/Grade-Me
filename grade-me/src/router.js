@@ -20,7 +20,12 @@ const routes = [
     name: 'ViewGrade'
   },
   { path: '/studentlist', component: StudentList, name: 'StudentList' },
-  { path: '/student/:id', component: StudentPage, name: 'StudentPage' },
+  {
+    path: '/student/:id',
+    component: StudentPage,
+    name: 'StudentPage',
+    props: true
+  },
   { path: '/addclass', component: AddClass, name: 'AddClass' },
   {
     path: '/addstudent/:data',

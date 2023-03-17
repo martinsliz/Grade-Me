@@ -9,7 +9,7 @@
     </div>
     <section class="search-results container-grid" v-if="!searched">
         <div class="search-results container-grid" v-for="oneStudent in allStudents" :key="oneStudent.id">
-         <h3><router-link :to='"/student/" + oneStudent.id'>{{ oneStudent.name }}</router-link></h3>
+         <h3> <router-link :to='"/student/" + oneStudent.id'>{{ oneStudent.name }}</router-link> </h3>
         </div>
     </section>
 
@@ -30,16 +30,22 @@ export default {
     data: () => ({
         searchQuery: '',
         searchResults: [],
-        searched: false
+        searched: false,
+        allStudents: [],
+        selectedStudent: {}
     }),
     mounted() {
-      this.getSearchResults()
+      this.getAllStudents()
     },
-    methods: {async getSearchResults(e) {
-        e.preventDefault()
+    methods:{
+    async getAllStudents() {
         const response = await axios.get(`http://localhost:3001/api/student/get-students`)
         console.log(response.data)
-        // this.searchResults = response.data
+        this.allStudents = response.data
+      },
+    async getSearchResults(e) {
+        e.preventDefault()
+        const response = await axios.get(`http://localhost:3001/api/student/get-students`)
         this.searchResults = response.data.filter((student) => {
     return student.name.toLowerCase().includes(this.searchQuery.toLowerCase())
   })
@@ -50,7 +56,9 @@ export default {
         this.searchQuery = event.target.value
       },
       selectStudent() {
-        this.$router.push('/student/:id')
+      },
+      async getStudentDetails(id) {
+        this.$router.push({name: 'StudentPage', params: {id:id}})
       }
     }}
   
