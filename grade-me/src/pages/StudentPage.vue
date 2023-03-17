@@ -3,11 +3,11 @@
   <h3>Students</h3>
   <section class="details">
       <div class="flex-row space">
+        <StudentList :results="results" />
         <h3>
-          {{ studentDetails.name }}
-          {{ studentDetails.email }}
-          {{ studentDetails.class }}
-          {{ studentDetails.gpa }}
+          <h3>{{ results.name }}</h3>
+          <h4>{{ results.gpa}}</h4>
+          <h4>{{ results.email}}</h4>
         </h3>
       </div>
       <div>
@@ -26,10 +26,12 @@
 
 <script>
 import axios from 'axios'
+import StudentList from './StudentList.vue'
 
 export default {
 name: 'StudentPage',
 components: {
+  StudentList
 
 },
 data: () => ({
