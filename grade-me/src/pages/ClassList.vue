@@ -1,34 +1,29 @@
 <template>
     <div class="classListContainer">
-        <h1 class="classTitle">Classes</h1>
-        <button @click="shareData">Add Class</button>
-        <!-- <router-link class="button" to="/addclass" :firstclass="firstclass">Add Class</router-link> -->
-        <!-- <div class="classListResults" :key="class.id" v-for="class in classes">
-            <router-link to=`/class/{{class.id}}`>{{ class.name }}</router-link>
-        </div> -->
+        <router-link class="button" to="/addclass" :getClasses="getClasses">Add Class</router-link>
+        <h1 class="classTitle">Classes List</h1>
+        <div class="classListResults" :key="classe.id" v-for="classe in classes">
+            <router-link :to='"/class/" + classe.id'>{{ classe.name }}</router-link>
+        </div>
     </div>
 </template>
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 
 export default {
     name: 'ClassList',
     components: {},
     data: () => ({
         classes: [],
-        firstclass: 'science',
     }),
     mounted() {
-        // this.getClasses()
+        this.getClasses()
     },
     methods: {
-        // async getClasses() {
-        //     const res = await axios.get(`http://localhost:3001/api/`)
-        //     this.classes = res.data
-        //     console.log(res)
-        // }
-        shareData() {
-            this.$router.push({ name: 'AddClass', params: { data: this.firstclass } })
+        async getClasses() {
+            const res = await axios.get(`http://localhost:3001/api/class/get-classes`)
+            this.classes = res.data
+            console.log(res)
         }
     }
 }

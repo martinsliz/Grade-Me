@@ -9,28 +9,20 @@ import AddClass from './pages/AddClass'
 import NewStudent from './components/NewStudent'
 
 const routes = [
-  { path: '/', component: HomePage, name: 'HomePage' },
-  { path: '/about', component: AboutPage, name: 'AboutPage' },
-  { path: '/classlist', component: ClassList, name: 'ClassList' },
-  { path: '/class/:id', component: ClassPage, name: 'ClassPage' },
-  {
-    path: '/classlist/:id/studentlist',
-    component: StudentList,
-    name: 'StudentList'
-  },
-  { path: '/student/:id', component: StudentPage, name: 'StudentPage' },
-  {
-    path: '/addclass/:data',
-    component: AddClass,
-    name: 'AddClass',
-    props: true
-  },
-  {
+    { path: '/', component: HomePage, name: 'HomePage' },
+    { path: '/about', component: AboutPage, name: 'AboutPage' },
+    { path: '/classlist', component: ClassList, name: 'ClassList' },
+    { path: '/class/:classId', component: ClassPage, name: 'ClassPage' },
+    { path: '/classlist/:id/studentlist', component: StudentList, name: 'StudentList' },
+    { path: '/student/:id', component: StudentPage, name: 'StudentPage' },
+    { path: '/addclass', component: AddClass, name: 'AddClass', },
+    {
     path: '/addstudent/:data',
     component: NewStudent,
     name: 'NewStudent',
     props: true
   }
+
 ]
 
 const router = createRouter({
