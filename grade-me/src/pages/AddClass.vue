@@ -26,7 +26,6 @@ export default {
             console.log(res)
             this.$router.push(`/`)
             this.getClasss()
-            //would I also have to put a getClassList() call again here?
         },
         handleChange(e) {
             this.newClassName = e.target.value

@@ -22,30 +22,24 @@
 
 <script>
 import axios from 'axios'
-  export default {
-    name: 'StudentList',
-    components:{
+export default {
+  name: 'StudentList',
+  components: {
 
     },
     data: () => ({
         searchQuery: '',
         searchResults: [],
-        searched: false,
-        allStudents: []
+        searched: false
     }),
     mounted() {
-      this.getAllStudents()
+      this.getSearchResults()
     },
-    methods: {
-      async getAllStudents() {
-        const response = await axios.get(`http://localhost:3001/api/student/get-students`)
-        // console.log(response.data)
-        this.allStudents = response.data
-      },
-      async getSearchResults(e) {
+    methods: {async getSearchResults(e) {
         e.preventDefault()
         const response = await axios.get(`http://localhost:3001/api/student/get-students`)
-        // console.log(response.data)
+        console.log(response.data)
+        // this.searchResults = response.data
         this.searchResults = response.data.filter((student) => {
     return student.name.toLowerCase().includes(this.searchQuery.toLowerCase())
   })
