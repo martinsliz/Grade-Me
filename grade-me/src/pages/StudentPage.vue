@@ -4,9 +4,9 @@
   <section class="details">
       <div class="flex-row space">
         <h3>
-          <h3>{{ studentDetails.name }}</h3>
+          <!-- <h3>{{ studentDetails.name }}</h3>
           <h4>{{ studentDetails.gpa}}</h4>
-          <h4>{{ studentDetails.email}}</h4>
+          <h4>{{ studentDetails.email}}</h4> -->
         </h3>
       </div>
       <div>
@@ -24,27 +24,15 @@
 
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
 name: 'StudentPage',
-components: {
+props: ["student"],
+// data: () => ({
+// student: {}
+// }),
+// created() {this.student = this.$route.params.data},
 
-},
-data: () => ({
-studentDetails: {}
-}),
-mounted() {
-this.getStudentDetails()
-},
-methods: {
-  async getStudentDetails() {
-    // const studentId = this.$route.params.id
-    const response = await axios.get('/api/student/get-students/:id')
-    console.log(response.data)
-    this.studentDetails = response.data
-  }
-  
-}
 }
 </script>
