@@ -39,8 +39,8 @@ this.getStudentDetails()
 },
 methods: {
   async getStudentDetails() {
-    const studentId = this.$route.params.id
-    const response = await axios.get(`/api/student/get-students/${studentId}`)
+    // const studentId = this.$route.params.id
+    const response = await axios.get('/api/student/get-students/:id')
     console.log(response.data)
     this.studentDetails = response.data
   }
